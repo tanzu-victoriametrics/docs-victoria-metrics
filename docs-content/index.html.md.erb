@@ -1,112 +1,97 @@
 ---
-title: Victoria Metrics for VMware Tanzu (Beta)
+title: VictoriaMetrics for VMware Tanzu (Beta)
 owner: Partners
 ---
 
 <strong><%= modified_date %></strong>
 
-**If this product is in beta, keep and edit the warning note below.**
 <p class="note warning">
 <strong>Warning: </strong>
-The PRODUCT-NAME for VMware Tanzu tile is currently in beta and is intended for evaluation and test purposes only.
-Do not use this product in a VMware Tanzu production environment.
+The VictoriaMetrics for VMware Tanzu tile is currently in beta.
 </p>
-
-**This topic begins with a brief description of what the product tile (e.g. Apigee Edge Service Broker for VMware Tanzu) does,
-whereas the Overview section below describes what the service itself (e.g. Apigee Edge) does. See below for an example.**
-
-This documentation describes the Apigee Edge Service Broker for VMware Tanzu. The Apigee Edge Service
-Broker for VMware Tanzu enables developers to manage APIs for their VMware Tanzu apps through the Apigee Edge management console.
 
 **Note**: This description appears under **OVERVIEW** in the tile's listing on
 [Pivotal Network](http://network.pivotal.io).
 
 ## <a id='overview'></a>Overview
 
-**The overview describes the service that your product offers to VMware Tanzu developers.
-Make sure to overview the features of the integration.
-Don't focus only on the overview of your product that is being integrated.
-See below for an example.**
+VictoriaMetrics is a fast and easy-to-use monitoring solution and time series database. 
+It integrates well with existing monitoring systems such as Grafana, Prometheus, Graphite, InfluxDB, OpenTSDB and DataDog - see these docs for [details](https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html).
 
-The Apigee Edge Service Broker for VMware Tanzu registers a service broker with VMware Tanzu and exposes its service plans on the
-Marketplace. Developers can then create service plan instances using Apps Manager or the Cloud Foundry Command
-Line Interface (cf CLI) and bind them to their apps.
+The most common use cases for VictoriaMetrics are:
 
-Creating an Apigee Edge for VMware Tanzu service instance and binding it to an app creates an Apigee Edge API proxy that
-handles requests for the app. This lets developers use the Apigee Edge management console to manage API request
-handling between clients and the app.
+* Long-term remote storage for Prometheus;
+* More efficient drop-in replacement for Prometheus and Graphite
+* Replacement for InfluxDB and OpenTSDB, which uses lower amounts of RAM, CPU and disk;
+* Cost-efficient alternative for DataDog.
 
 **Note**: This overview appears under **OVERVIEW**, combined with the description above in the tile's listing on
 [Pivotal Network](http://network.pivotal.io).
 
 ## <a id='features'></a>Key Features
 
-**Note**: This feature list appears under **FEATURES** in the tile's listing on
-[Pivotal Network](http://network.pivotal.io).
-Make sure you list the key features of the tile (the integration).
-We cannot accept a list of the key features of your product that we are integrating.
+VictoriaMetrics for VMware Tanzu includes the following key features:
 
-YOUR-PRODUCT-NAME includes the following key features:
-
-* Feature one
-* Feature two
-* Feature three
-
+* The possibility to use the VictoriaMetrics service in a single-server mode
+* Long-term storage solution for time series data
+* Fully-automated deployment and provisioning of an VictoriaMetrics installation
 
 
 ## <a id="snapshot"></a>Product Snapshot
 
-The following table provides version and version-support information about PRODUCT-NAME.
+TThe following table provides version and version-support information about VictoriaMetrics for VMware Tanzu.
 
 <table class="nice">
     <th>Element</th>
     <th>Details</th>
     <tr>
-        <td>Tile version</td>
-        <td>vYOUR-VERSION-NUMBER</td>
+        <td>Tile Version</td>
+        <td>v0.0.1</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>YOUR-RELEASE-DATE (Ex: July 1, 2019)</td>
+        <td>May 9, 2023</td>
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>YOUR-SOFTWARE-COMPONENT-VERSION-NUMBER</td>
+        <td>v0.0.1</td>
+    </tr>
+    <tr>
+        <td>VictoriaMetrics</td>
+        <td>v1.87.1</td>
+    </tr>
+    <tr>
+        <td><div>Exporters:</div><div>Bosh Exporter</div><div>CF Exporter</div><div>Firehose Exporter</div><div>Postgres Exporter</div></td>
+        <td><div>Versions:</div><div>3.4.0</div><div>1.0.0</div><div>6.2.0</div><div>0.11.1</div></td>
+    </tr>
+    <tr>
+        <td><div>Grafana</div></td>
+        <td><div>9.3.6</div></td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
-        <td>YOUR-COMPATIBLE-OPS-MAN-VERSION (Ex. 2.5, 2.6, and 2.7)</td>
+        <td>v2.7.x, v2.8.x, v2.9.x, v2.10.x </td>
     </tr>
     <tr>
-        <td>Compatible Tanzu Application Service version(s)</td>
-        <td>YOUR-COMPATIBLE-TANZU-APPLICATION-SERVICE-VERSION (Ex. 2.5, 2.6, and 2.7)</td>
-    </tr>
-        <tr>
-        <td>Compatible Tanzu Application Service for Windows version(s)</td>
-        <td>YOUR-COMPATIBLE-TANZU-APPLICATION-SERVICE-VERSION (Ex. 2.5, 2.6, and 2.7)</td>
+        <td>Compatible Tanzu Application Service (TAS) version(s)</td>
+        <td>v2.7.x, v2.8.x, v2.9.x, v2.10.x, v2.11.x </td>
     </tr>
     <tr>
-       <td>BOSH stemcell version</td>
-       <td>Ubuntu Xenial</td>
+        <td>BOSH stemcell version</td>
+        <td>Ubuntu Xenial 621</td>
     </tr>
     <tr>
         <td>IaaS support</td>
-        <td>AWS?, Azure?, GCP?, OpenStack?, and vSphere?</td>
+        <td>AWS, Azure, GCP, OpenStack, and vSphere</td>
     </tr>
 </table>
 
 
 ## <a id="reqs"></a>Requirements
 
-**Provide any general or specific requirements, prerequisites, or dependencies here.
-A general requirement might be something like, "An AppDynamics account."
-A specific requirement might be something like, "Packaging Dependencies for Offline Buildpacks."**
+VictoriaMetrics for VMware Tanzu has the following requirements:
 
-YOUR-PRODUCT-NAME has the following requirements:
-
-+ PREREQUISITE-1
-
-+ PREREQUISITE-2
+* [TAS](https://network.pivotal.io/products/elastic-runtime) v2.7.x, v2.8.x, v2.9.x, v2.10.x, v2.11.x
 
 ## <a id="limitations"></a>Limitations
 
@@ -114,7 +99,7 @@ YOUR-PRODUCT-NAME has the following requirements:
 
 ## <a id="feedback"></a>Feedback
 
-If you have a feature request, questions, or information about an issue, send an email to YOUR-SUPPORT-EMAIL.
+If you have a feature request, questions, or information about an issue, send an email to [VictoriaMetrics Customer Support](mailto:tanzu@victoriametrics.com).
 
 ## <a id='license'></a>License
 
